@@ -1,2 +1,36 @@
-<div id="menu" class="slideout-menu slideout-closed"><div class="flexbox"><nav><h4>Pages</h4><a href="{{ site.url }}">Home</a><a href="{{ site.url }}/about.html">About</a><a href="{{ site.url }}/archives.html">Archives</a><h4>Categories</h4><a href="{{ site.url }}/categories/category1.html">Category 1</a></nav><div class="details"><b>{{site.title}}</b><p>A Jekyll Theme</p><p> 
-A minimal theme Jekyll theme with all the basics you need. Designed by <a>Nina</a>  , and free on <a>Github</a></p></div></div></div>
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="{{ site.baseurl }}/" title="HOME"><img src="{{ site.baseurl }}/logo.png" alt="logo" style="width:150px;cursor:pointer;margin-top:15px;"/></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+               <li>
+                    <a href="{{ site.baseurl }}/gallery/">GALLERY</a>
+                </li>
+                <li>
+                    <a href="{{ site.baseurl }}/journal/">JOURNAL</a>
+                </li>
+                                <li>
+                    <a href="{{ site.baseurl }}/about/">ABOUT</a>
+                </li>
+<li>
+                    <a href="{{ site.baseurl }}/search/">SEARCH</a>
+                </li>
+
+                            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
