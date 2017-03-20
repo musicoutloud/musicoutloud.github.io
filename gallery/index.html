@@ -1,33 +1,101 @@
 ---
 layout: page
-title: "Galleries"
+title: "ALBUMS"
 description: "archive"
+active: gallery
 header-img: "img/gallery-bg.jpg"
+images:
+ - image_path: /gallery/albums/alb01.jpg
+   gallery-folder: /gallery/gallery01/
+   gallery-name: gallery1
+   gallery-date: July 2015
+ - image_path: /gallery/albums/alb02.jpg
+   gallery-folder: /gallery/gallery02/
+   gallery-name: gallery2
+   gallery-date: June 2015
+ - image_path: /gallery/albums/alb03.jpg
+   gallery-folder: /gallery/gallery03/
+   gallery-name: gallery3
+   gallery-date: May 2015
+ - image_path: /gallery/albums/alb04.jpg
+   gallery-folder: /gallery/gallery04/
+   gallery-name: gallery4
+   gallery-date: April 2015
+ - image_path: /gallery/albums/alb05.jpg
+   gallery-folder: /gallery/gallery05/
+   gallery-name: gallery5
+   gallery-date: March 2015
+ - image_path: /gallery/albums/alb06.jpg
+   gallery-folder: /gallery/gallery06/
+   gallery-name: gallery6
+   gallery-date: February 2015
+ - image_path: /gallery/albums/alb07.jpg
+   gallery-folder: /gallery/gallery07/
+   gallery-name: gallery7
+   gallery-date: January 2015
+ - image_path: /gallery/albums/alb08.jpg
+   gallery-folder: /gallery/gallery08/
+   gallery-name: gallery8
+   gallery-date: December 2014
+ - image_path: /gallery/albums/alb09.jpg
+   gallery-folder: /gallery/gallery09/
+   gallery-name: gallery9
+   gallery-date: November 2014
 ---
 
 <html class="no-js" lang="en">
 <head>
 	<meta content="charset=utf-8">
-  
-<!-- CSS -->
-	    <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:400,600&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ "/css/selena.css" | prepend: site.baseurl }}">
+</head>
 
-		<link rel="stylesheet" href="{{ site.baseurl }}/css/magnificpopup.css" media="screen" />
 
-          <link rel="stylesheet" href="{{ site.baseurl }}/css/galleries.css" media="screen" />
+    <body class="gallery">
+ 
+	<section id="content" role="main">
+		<div class="wrapper">
+	
+			<h2>{{page.title}}</h2>
+			
+			<!-- Gallery __-->
+			<div class="gallery masonry-gallery">
+				
+{% for image in page.images %}  	
 
-    <link rel="stylesheet" href="{{ site.baseurl }}/css/selena.css" media="screen" />
+	               <figure class="gallery-item">
+                         <figure class="effect-selena">
+					<header class='gallery-icon'>
+		       
+<a href="{{ site.url }}{{ site.baseurl }}{{ image.gallery-folder }}">
+<img src="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}"></a>
 
- <!-- jQuery -->    
+					</header>	
+					<figcaption class='gallery-caption'>
+						<div class="entry-summary">
+							<h3>{{image.gallery-name}}</h3>
+							<p>{{image.gallery-date}}</p>
+						</div>
+					</figcaption>
+                       </figure>
+				</figure>
+							
+{% endfor %}		
+				
+			</div>
+			
+		</div><!-- END .wrapper -->
+	</section>
 
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 
+<br>
+<h6><p>Image Source: <a href="https://unsplash.com/photos/YOT6kS8YtEA/">Unsplash</a></p></h6>
+
+<!-- jQuery -->    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="{{ site.baseurl }}/js/retina.min.js"></script>
 <!-- include Masonry -->
 <script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script> 
-<!-- include image popups -->
-<script src="{{ site.baseurl }}/js/jquery.magnific-popup.min.js"></script>
 <!-- include mousewheel plugins -->
 <script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
 <!-- include carousel plugins -->
@@ -36,162 +104,7 @@ header-img: "img/gallery-bg.jpg"
 <script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
 <!-- include custom script -->
 <script src="{{ site.baseurl }}/js/scripts.js"></script>
-	<!-- Modernizr -->
-  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
-</head>
-
-
-
-    <body>
- 
-	<section id="content" role="main">
-		<div class="wrapper">
-	
-			<h2>ALBUMS</h2>
-			
-			<!-- Gallery __-->
-			<div class="gallery masonry-gallery">
-				
-				<figure class="gallery-item">
-                         <figure class="effect-selena">
-					<header class='gallery-icon'>
-		                     <a href="gallery01/"><img src="{{ site.baseurl }}/gallery/albums/alb01.jpg"></a>
-
-					</header>	
-					<figcaption class='gallery-caption'>
-						<div class="entry-summary">
-							<h3>GALLERY01</h3>
-							<p>month-year</p>
-						</div>
-					</figcaption>
-                       </figure>
-				</figure>
-
-				<figure class="gallery-item">
-                         <figure class="effect-selena">
-					<header class='gallery-icon'>
-						 <a href="gallery02/"><img src="{{ site.baseurl }}/gallery/albums/alb02.jpg"alt="" /></a>
-					</header>	
-					<figcaption class='gallery-caption'>
-						<div class="entry-summary">
-							<h3>GALLERY02</h3>
-							<p>month-year</p>
-						</div>
-					</figcaption>
-                       </figure>
-				</figure>
-
-				<figure class="gallery-item">
-                         <figure class="effect-selena">
-					<header class='gallery-icon'>
-						<a href="gallery03/"><img src="{{ site.baseurl }}/gallery/albums/alb03.jpg"alt="" /></a>
-					</header>	
-					<figcaption class='gallery-caption'>
-						<div class="entry-summary">
-							<h3>GALLERY03</h3>
-							<p>month-year</p>
-						</div>
-					</figcaption>
-                       </figure>
-				</figure>
-
-				<figure class="gallery-item">
-                         <figure class="effect-selena">
-					<header class='gallery-icon'>
-						<a href="gallery04/"><img src="{{ site.baseurl }}/gallery/albums/alb04.jpg"alt="" /></a>
-					</header>	
-					<figcaption class='gallery-caption'>
-						<div class="entry-summary">
-							<h3>GALLERY04</h3>
-							<p>month-year</p>
-						</div>
-					</figcaption>
-                       </figure>
-				</figure>
-
-				<figure class="gallery-item">
-                         <figure class="effect-selena">
-					<header class='gallery-icon'>
-						<a href="gallery05/"><img src="{{ site.baseurl }}/gallery/albums/alb05.jpg"alt="" /></a>
-					</header>	
-					<figcaption class='gallery-caption'>
-						<div class="entry-summary">
-							<h3>GALLERY05</h3>
-							<p>month-year</p>
-						</div>
-					</figcaption>
-                       </figure>
-				</figure>
-
-				<figure class="gallery-item">
-                         <figure class="effect-selena">
-					<header class='gallery-icon'>
-						<a href="gallery06/"><img src="{{ site.baseurl }}/gallery/albums/alb06.jpg"alt="" /></a>
-					</header>	
-					<figcaption class='gallery-caption'>
-						<div class="entry-summary">
-							<h3>GALLERY06</h3>
-							<p>month-year</p>
-						</div>
-					</figcaption>
-                       </figure>
-				</figure>
-
-				<figure class="gallery-item">
-                         <figure class="effect-selena">
-					<header class='gallery-icon'>
-					      <a href="gallery07/"><img src="{{ site.baseurl }}/gallery/albums/alb07.jpg"alt="" /></a>
-
-					</header>	
-					<figcaption class='gallery-caption'>
-						<div class="entry-summary">
-							<h3>GALLERY07</h3>
-							<p>month-year</p>
-						</div>
-					</figcaption>
-                       </figure>
-				</figure>
-
-				<figure class="gallery-item">
-                         <figure class="effect-selena">
-					<header class='gallery-icon'>
-						<a href="gallery08/"><img src="{{ site.baseurl }}/gallery/albums/alb08.jpg"alt="" /></a>
-					</header>	
-					<figcaption class='gallery-caption'>
-						<div class="entry-summary">
-							<h3>GALLERY08</h3>
-							<p>month-year</p>
-						</div>
-					</figcaption>
-                       </figure>
-				</figure>
-
-				<figure class="gallery-item">
-                         <figure class="effect-selena">
-					<header class='gallery-icon'>
-						<a href="gallery09/"><img src="{{ site.baseurl }}/gallery/albums/alb09.jpg"alt="" /></a>
-                           </header>	
-					<figcaption class='gallery-caption'>
-						<div class="entry-summary">
-							<h3>GALLERY09</h3>
-							<p>month-year</p>
-						</div>
-					</figcaption>
-                       </figure>
-				</figure>
-				
-				
-				
-			</div>
-			
-			
-
-		</div><!-- END .wrapper -->
-	</section>
-
-
-<br>
-<h6><p>Image Source: <a href="https://unsplash.com/photos/YOT6kS8YtEA/">Unsplash</a></p></h6>
-
+<!-- Modernizr -->
+ <script src="{{ site.baseurl }}/js/modernizr.js"></script>
 
 </body></html>

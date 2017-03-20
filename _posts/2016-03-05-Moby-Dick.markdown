@@ -2,10 +2,10 @@
 layout:     post
 title:      "Moby Dick"
 subtitle:   "Herman Melville"
+active: journal
 image:
   feature: "pc005.jpg"
 date:       2016-03-05 
-author:     "owner_name"
 header-img: "img/postcover/pc005.jpg"
 tags: [tag02]
 categories: [cat03]

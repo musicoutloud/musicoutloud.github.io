@@ -2,10 +2,10 @@
 layout:     post
 title:      "The Wizard of Oz"
 subtitle:   "L. Frank Baum"
+active: journal
 image:
   feature: "pc003.jpg"
-date:       2016-03-15 
-author:     "owner_name"
+date:       2016-03-15
 header-img: "img/postcover/pc003.jpg"
 tags: [tag03, tag04]
 categories: [cat03, cat04]

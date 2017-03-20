@@ -2,10 +2,10 @@
 layout:     post
 title:      "At the Earth's Core"
 subtitle:   "Edgar Rice Burroughs"
+active: journal
 image:
   feature: "pc004.jpg"
 date:       2016-03-10 
-author:     "owner_name"
 header-img: "img/postcover/pc004.jpg"
 tags: [tag01]
 categories: [cat02]

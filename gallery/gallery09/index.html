@@ -2,23 +2,25 @@
 layout: page
 title: "album"
 description: "masonry"
+active: gallery
 header-img: "img/gallery-bg.jpg"
+album-title: "my 9th album"
+images:
+ - image_path: /gallery/archive/g09/bg1.jpg
+   caption: IMAGE TITLE
+   mfp-title: IMAGE TITLE
+   copyright: © photorama
+ - image_path: /gallery/archive/g09/bg2.jpg
+   caption: IMAGE TITLE
+   copyright: © photorama
+ - image_path: /gallery/archive/g09/bg3.jpg
+   caption: IMAGE TITLE
+   copyright: © photorama
 ---
 
 <html class="no-js" lang="en">
 <head>
 	<meta content="charset=utf-8">
-  
-<!-- CSS -->
-	    <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:400,600&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-
-        <link rel="stylesheet" href="{{ site.baseurl }}/css/galleries.css" media="screen" />
-
-         <link rel="stylesheet" href="{{ site.baseurl }}/css/magnificpopup.css" media="screen" />
-
-
-	<!-- Modernizr -->
-  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
 </head>
 
     <body>
@@ -26,73 +28,72 @@ header-img: "img/gallery-bg.jpg"
 	<section id="content" role="main">
 		<div class="wrapper">
 	<br><br>
-			<h2>"Album title"</h2>
+			<h2>{{page.album-title}}</h2>
 
 
 			<!-- Gallery __-->
 			<div class="gallery masonry-gallery">
-				
-				<figure class="gallery-item">
-					<header class='gallery-icon'>
-						<a href="{{ site.baseurl }}/gallery/archive/g09/bg1.jpg" class="popup"><img src="{{ site.baseurl }}/gallery/archive/g09/bg1.jpg" style="cursor: default;" /></a>
-					</header>	
-					<figcaption class='gallery-caption'>
-						<div class="entry-summary">
-							<h3>TITLE GOES HERE</h3>
-							<p>caption goes here</p>
-						</div>
-					</figcaption>
-				</figure>
-				
-				<figure class="gallery-item">
-					<header class='gallery-icon'>
-						<a href="{{ site.baseurl }}/gallery/archive/g09/bg2.jpg" class="popup"><img src="{{ site.baseurl }}/gallery/archive/g09/bg2.jpg" style="cursor: default;" /></a>
-					</header>
-					<figcaption class='gallery-caption'>
-						<div class="entry-summary">
-							<h3>TITLE GOES HERE</h3>
-							<p>caption goes here</p>
-						</div>
-					</figcaption>
-				</figure>				
+		
+{% for image in page.images %}  		
 
 				<figure class="gallery-item">
 					<header class='gallery-icon'>
-						<a href="{{ site.baseurl }}/gallery/archive/g09/bg3.jpg" class="popup"><img src="{{ site.baseurl }}/gallery/archive/g09/bg3.jpg" style="cursor: default;" /></a>
+
+<a href="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}" class="popup" title="{{ image.caption }}" data-caption="{{ image.copyright }}">
+<img src="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}"></a>
+						
 					</header>	
 					<figcaption class='gallery-caption'>
 						<div class="entry-summary">
-							<h3>TITLE GOES HERE</h3>
-							<p>caption goes here</p>
+							<h3>{{image.caption}}</h3>
+							<p>{{image.copyright}}</p>
 						</div>
 					</figcaption>
 				</figure>
+				
+{% endfor %}
 
-				</a>
-					</header>
-				</figure>
 			</div>
 
 		</div><!-- END .wrapper -->
 	</section>
 
+<!-- jQuery -->    
 
-<!-- jQuery -->
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<!-- include image popups -->
+<script src="{{ site.baseurl }}/js/jquery.magnific-popup.js"></script>
 <script src="{{ site.baseurl }}/js/retina.min.js"></script>
 <!-- include Masonry -->
 <script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script> 
-<!-- include image popups -->
-<script src="{{ site.baseurl }}/js/jquery.magnific-popup.min.js"></script>
 <!-- include mousewheel plugins -->
 <script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
 <!-- include carousel plugins -->
-<script src="{{ site.baseurl }}/js/jquery.tinycarousel.min.js"></script>
+<script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
 <!-- include svg line drawing plugin -->
 <script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
 <!-- include custom script -->
 <script src="{{ site.baseurl }}/js/scripts.js"></script>
+<!-- Modernizr -->
+ <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function($) {
+        $('a.popup').magnificPopup({
+          type: 'image',
+	  gallery:{
+         enabled:true,
+         navigateByImgClick: true,
+         preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+       },
+      image: {
+         titleSrc: function(item) {
+              return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
+            }
+        }
+          // other options
+      });
+});
+    </script>
 
 </body></html>

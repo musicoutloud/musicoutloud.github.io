@@ -2,10 +2,10 @@
 layout:     post
 title:      "The Scarlet Plague"
 subtitle:   "Jack London"
+active: journal
 image:
   feature: "pc002.jpg"
-date:       2016-03-20 
-author:     "owner_name"
+date:       2016-03-20
 header-img: "img/postcover/pc002.jpg"
 tags: [tag03, tag04]
 categories: [cat03, cat04]
